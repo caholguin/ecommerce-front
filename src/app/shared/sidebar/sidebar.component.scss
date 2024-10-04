@@ -1,0 +1,157 @@
+
+*, ::after, ::before{
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    height: 100vh;
+    background-size: cover;
+
+
+    display: flex;
+    align-items: center;    
+}
+
+.sidebar{
+    background-color: #FFFFFF;
+    width: max-content;
+    border-radius: 10px;
+    //esta clase es la que deberia borrar para que quede como el diseño de la foto
+    padding: 2rem 1rem;
+}
+
+.sidebar:hover .sidebar_element{
+    min-width: 360px;
+    grid-template-columns: 40px 1fr;
+}
+
+.sidebar_list{
+    list-style: none;
+    padding: 0;
+
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+/* .sidebar_element{
+    padding: .8rem 1.3rem;
+    border-radius: 3px;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px 0fr;    
+
+    color: #526581;
+    fill: #8491a5;
+
+    transition: grid-template-colums .4s;
+   
+}
+
+.sidebar_element:not(:has(.sidebar_icon--logo)):hover{
+    background-color: #009393;
+    color: #fff;
+    fill: #fff;
+    cursor: pointer;
+}
+
+.sidebar_element:has(.sidebar_icon--logo){
+    margin-bottom: 1rem;
+} */
+
+.sidebar_element {
+    position: relative; /* Necesario para usar ::before */
+    padding: .8rem 1.3rem;
+    border-radius: 3px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px 0fr;    
+    color: #526581;
+    fill: #8491a5;
+    transition: all .4s ease;
+}
+
+/* Hover para aplicar efecto de color en una parte del li */
+.sidebar_element::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Para centrar verticalmente */
+    left: 0;
+    transform: translateY(-50%); /* Centra el pseudo-elemento */
+    width: 10px; /* Ancho de la parte coloreada */
+    height: 50%; /* Altura de la parte coloreada */
+    background-color: transparent;
+    transition: background-color 0.4s ease, height 0.4s ease;
+    border-radius: 10px;
+}
+
+/* Al pasar el mouse solo colorea una pequeña parte del li */
+.sidebar_element:hover::before {
+    background-color: #009393; /* Color al hacer hover */
+    height: 70%; /* Cambia la altura de la parte coloreada */
+    border-radius: 10px;
+}
+
+/* Opcional: cambiar el color del texto o los íconos al hacer hover */
+.sidebar_element:hover {
+    color: #009393;
+    fill: #009393;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.sidebar_icon {
+    width: 100%;
+    overflow: hidden;
+    justify-self: center;
+}
+
+.sidebar_icon--logo{
+    max-width: 30px;
+}
+
+.sidebar_text{
+    padding-top: 0.2rem;
+}
+
+.sdebar_logo,.sidebar_text{
+    padding-left: 1rem;
+}
+
+
+.sidebar_hide{
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

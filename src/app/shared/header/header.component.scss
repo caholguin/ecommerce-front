@@ -1,0 +1,30 @@
+.header {   
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.grid-container {
+  display: grid;    
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+
+.icon-field {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el icono y el input */
+  }
+  
+  .icon-field .material-symbols-outlined {
+    margin-right: 8px; /* Espacio entre el icono y el input */
+    font-size: 24px; /* Ajusta el tamaño del icono según tu necesidad */
+  }
+  
+  .icon-field input {
+    flex: 1; /* Hace que el input ocupe el espacio restante */
+  }
+  
