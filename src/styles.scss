@@ -1,9 +1,14 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
 
-body{
-    background-color: #FAFAFA;
+:root {
+    --primary-color: #009393;
+    --primary-text-color: #FAFAFA;
+    --secondary-color: #E8FCFF;
 }
 
 
-  
+body {
+    background-color: var(--primary-text-color)
+}

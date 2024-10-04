@@ -1,30 +1,59 @@
-.header {   
-    padding: 20px;
-}
-
-.header h1 {
+.header {
+    padding: 10px;
+  
+  }
+  
+  .header h1 {
     margin: 0;
-}
-
-.grid-container {
-  display: grid;    
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-}
-
-
-.icon-field {
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Tres columnas: izquierda, centro, derecha */
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 10px;
+  }
+  
+  .header-title {
+    justify-self: start; /* Alinea el texto Header a la izquierda */
+  }
+  
+  .search-field {
+    justify-self: center; /* Centra el campo de búsqueda en el medio */
+  }
+  
+  .button-field {
+    justify-self: end; /* Alinea el botón a la derecha */
+  }
+  
+  .icon-field {
     display: flex;
-    align-items: center; /* Alinea verticalmente el icono y el input */
+    align-items: center;
   }
   
   .icon-field .material-symbols-outlined {
-    margin-right: 8px; /* Espacio entre el icono y el input */
-    font-size: 24px; /* Ajusta el tamaño del icono según tu necesidad */
+    margin-right: 8px;
+    font-size: 24px;
   }
   
   .icon-field input {
-    flex: 1; /* Hace que el input ocupe el espacio restante */
+    flex: 1;
   }
-  
+
+  .btn_header{
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.svg_header{
+    fill: var(--primary-color);
+}
+
+.header_options{
+    margin-right: 10px;
+}
+
+ 
+      
