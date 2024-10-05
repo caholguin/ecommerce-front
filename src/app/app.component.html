@@ -1,17 +1,10 @@
-
-<div class="layout">
-    
-    <app-sidebar></app-sidebar>
-    
-
-    <div class="main"> 
+ 
          <app-header/>  
-         <div class="content">
-           
-            <app-products/>
+        
 
-         </div>
-    </div>
+         @if (sidebar) {
+             <app-sidebar/>
+         }
        
 
 <router-outlet />
