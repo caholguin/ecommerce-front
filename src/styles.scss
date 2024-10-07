@@ -1608,22 +1608,52 @@
   
   .product-grid .btn-action {
     background: var(--white);
-    color: var(--sonic-silver);
-    margin-bottom: 5px;
-    border: 1px solid var(--cultured);
+    color: var(--sonic-silver);   
+    border: 1px solid var(--cultured);  
     padding: 5px;
     -webkit-border-radius: var(--border-radius-sm);
-            border-radius: var(--border-radius-sm);
+    border-radius: var(--border-radius-sm);
     -webkit-transition: var(--transition-timing);
     -o-transition: var(--transition-timing);
     transition: var(--transition-timing);
   }
   
-  .product-grid .btn-action:hover {
+  .product-grid .btn-action:hover .btn-actions:hover {
     background: var(--eerie-black);
+    fill: var(--white);
     color: var(--white);
     border-color: var(--eerie-black);
   }
+  
+  .btn-actions {
+    background: var(--white);
+    color: var(--sonic-silver);
+    border: 1px solid var(--cultured);
+    width: 32px; // Ancho del botón cuadrado
+    height: 32px; // Alto del botón igual al ancho
+    display: flex;
+    justify-content: center; // Centra el contenido horizontalmente
+    align-items: center; // Centra el contenido verticalmente
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-timing);
+    margin: 5px;
+
+    svg {
+      width: 20px; // Tamaño del ícono
+      height: 20px; // Tamaño del ícono
+    }
+  }
+
+ .btn-actions:hover {
+    background: var(--eerie-black);
+    fill: var(--white);
+    color: var(--white);
+    border-color: var(--eerie-black);
+  }
+
+  
+
+
   
   .product-grid .showcase-content { padding: 15px 20px 0; }
   
@@ -1690,6 +1720,7 @@
             border-radius: var(--border-radius-md);
     text-align: center;
     margin-bottom: 25px;
+    fill: var(--sandy-brown);
   }
   
   .testimonial-banner {
@@ -1849,6 +1880,7 @@
   .service-icon {
     font-size: 35px;
     color: var(--salmon-pink);
+    fill: var(--salmon-pink);
     -webkit-transition: var(--transition-timing);
     -o-transition: var(--transition-timing);
     transition: var(--transition-timing);
@@ -2060,6 +2092,7 @@
     width: -moz-max-content;
     width: max-content;
     color: var(--sonic-silver);
+    fill: var(--sonic-silver);
     font-size: var(--fs-7);
     text-transform: capitalize;
     -webkit-transition: var(--transition-timing);
@@ -3164,6 +3197,11 @@
   
     .footer-nav { padding-bottom: 50px; }
   
+  }
+
+
+  .star{
+    fill: var(--sandy-brown);
   }
   
   

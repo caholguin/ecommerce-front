@@ -1,0 +1,66 @@
+<main>
+
+    <!--- BANNER -->
+
+    <app-banner/>
+
+
+    <!--- CATEGORY -->
+
+    <app-category />
+
+
+    <!--- PRODUCT -->
+
+    <div class="product-container">
+
+        <div class="container">
+
+            <!--- SIDEBAR -->
+            <app-sidebar />
+
+
+            <div class="product-box">
+
+                <!--- PRODUCT MINIMAL -->
+
+                <div class="product-minimal">
+
+                    <div class="product-showcase">
+                        <app-new-arrival />
+                    </div>
+
+                    <div class="product-showcase">
+                        <app-trending />
+                    </div>
+
+                    <div class="product-showcase">
+                        <app-toprated />
+                    </div>
+
+                </div>
+
+                <!--- PRODUCT FEATURED -->
+                <app-dealoftheday/>
+
+                <!--- PRODUCT GRID -->
+               <app-newproduct/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--- TESTIMONIALS, CTA & SERVICE -->
+
+   <app-testimonial/>
+
+
+    <!--
+      - BLOG
+    -->
+
+  <app-blog/>
+
+</main>
