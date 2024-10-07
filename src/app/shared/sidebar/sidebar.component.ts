@@ -14,17 +14,21 @@ export class SidebarComponent implements OnInit{
   
   private sidebarService = inject(SidebarService);
 
-  sidebarVisible = false; 
+  sidebarVisible = false;  
+  statusData = false;
 
-  ngOnInit(): void {
-    // Suscríbete al estado de visibilidad del sidebar
+  ngOnInit(): void {    
     this.sidebarService.sidebarVisible.subscribe(visible => {
-      this.sidebarVisible = visible;  // Cambia el estado cuando el servicio lo emita
+      this.sidebarVisible = visible;  
     });
   }
 
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
+  }
+
+  dataAcordion(){    
+    this.statusData = !this.statusData;
   }
   
 }

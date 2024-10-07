@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit{
   
   menu = false;
   sidebarVisible = false;
+  statusData = false;
   
   ngOnInit(): void {
     this.sidebarService.sidebarVisible.subscribe(visible => {
@@ -29,5 +30,9 @@ export class HeaderComponent implements OnInit{
 
   toggleSidebar() {
     this.sidebarService.toggleSidebar();  
+  }
+
+  dataAcordion(){    
+    this.statusData = !this.statusData;
   }
 }
