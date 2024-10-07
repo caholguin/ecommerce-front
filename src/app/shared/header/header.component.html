@@ -9,6 +9,7 @@
         <li>
           <a href="#" class="social-link">
             <!-- <ion-icon name="logo-facebook"></ion-icon> -->
+            
           </a>
         </li>
 
@@ -392,12 +393,13 @@
 
     <button (click)="toggleSidebar()" class="action-btn" data-mobile-menu-open-btn>
       <!-- <ion-icon name="grid-outline"></ion-icon> -->
-       <h1>bton</h1>
+       <h1>Sidebar</h1>
     </button>
 
   </div>
 
-  <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu [ngClass]="{'active': isMenuOpen}">
+
+  <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu [ngClass]="{'active': menu}">
     <div class="menu-top">
       <h2 class="menu-title">Menu</h2>
       
@@ -638,3 +640,12 @@
   </nav>
 
 </header>
+
+
+
+
+@if (sidebarVisible) {
+  <app-sidebar/>
+
+}
+

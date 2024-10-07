@@ -20,7 +20,7 @@ export class AppComponent {
   title = 'ecommerce'; 
 
 
-  sidebar: boolean = true;
+  //sidebar: boolean = false;
 
 
 
