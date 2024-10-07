@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { Product } from '../../interfaces/Produt.interface';
 import { ProductsService } from '../../services/products.service';
-import { CarouselModule } from 'primeng/carousel';
-import { TagModule } from 'primeng/tag';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
+
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CarouselModule, TagModule, CardModule, ButtonModule],
+  imports: [],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
