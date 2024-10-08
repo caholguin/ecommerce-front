@@ -9,11 +9,13 @@ import { NewProductComponent } from '../../components/newproduct/newproduct.comp
 import { TestimonialComponent } from '../../components/testimonial/testimonial.component';
 import { BlogComponent } from '../../components/blog/blog.component';
 import { BannerComponent } from '../../components/banner/banner.component';
+import { FooterComponent } from '../../shared/footer/footer.component';
+import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CategoryComponent,SidebarComponent,NewArrivalComponent,TrendingComponent,TopRatedComponent,DealOfTheDayComponent,NewProductComponent,TestimonialComponent,BlogComponent,BannerComponent],
+  imports: [FooterComponent,HeaderComponent,CategoryComponent,SidebarComponent,NewArrivalComponent,TrendingComponent,TopRatedComponent,DealOfTheDayComponent,NewProductComponent,TestimonialComponent,BlogComponent,BannerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
