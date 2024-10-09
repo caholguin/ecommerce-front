@@ -1,0 +1,82 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: var(--light);
+  }
+  
+  .status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+  }
+  
+  .completed {
+    background-color: var(--success);
+  }
+  
+  .pending {
+    background-color: var(--warning);
+  }
+  
+  .processing {
+    background-color: var(--danger);
+  }
+  
+  .pagination {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination a {
+    padding: 8px;
+    margin: 0 4px;
+    text-decoration: none;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+
+.pagination a {
+    
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: var(--light);
+    color: var(--dark);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: var(--light-primary);
+}
+
+.pagination a.active {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .pagination {
+      align-items: center;
+      //flex-direction: column; /* Alinea los elementos de la paginación en columna en pantallas pequeñas */
+    }
+  
+    .content main .bottom-data .orders table {
+      min-width: 340px;
+    }
+}

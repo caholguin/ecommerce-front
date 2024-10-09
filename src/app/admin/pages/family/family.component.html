@@ -1,0 +1,33 @@
+<div class="header">
+    <div class="left">
+        <!-- <h1>Familias</h1> -->
+        <ul class="breadcrumb">
+            <li><a href="#">
+                    Admin
+                </a></li>
+            /
+            <li><a href="#" class="active">Familias</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="bottom-data">
+    <div class="orders">
+
+        <app-custom-table [data]="tableData1" [columns]="[
+            { header: 'Nombre', field: 'name' },
+            { header: 'Fecha de Pedido', field: 'orderDate' },
+            { header: 'Estado', field: 'status' },
+            { header: 'Imagen', field: 'image' }
+        ]"
+        (edit)="handleEdit($event)"
+        (delete)="handleDelete($event)">
+        >         
+        </app-custom-table>
+
+    </div>
+
+
+
+</div>

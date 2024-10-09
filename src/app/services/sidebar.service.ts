@@ -10,9 +10,9 @@ export class SidebarService {
   public sidebarVisible = this.sidebar.asObservable();
 
   showSidebar = false;
-
+ 
   toggleSidebar(){
     this.sidebar.next(!this.sidebar.value);
     this.showSidebar = this.sidebar.value;
-  }
+  } 
 }

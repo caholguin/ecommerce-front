@@ -1,0 +1,40 @@
+<div class="header">
+    <i class='bx bx-receipt'></i>
+    <h3>Familias</h3>
+    <i class='bx bx-filter'></i>
+    <i class='bx bx-search'></i>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            @for (column of columns; track $index) {
+                <th >{{ column.header }}</th>
+            }
+            <th colspan="2">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of data; track $index) {
+            <tr >
+                <td *ngFor="let column of columns">{{ item[column.field] }}</td>
+                <td>
+                    <button (click)="onEdit(item)">Editar</button>
+                </td>
+                <td>
+                    <button (click)="onDelete(item)">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<div class="pagination">
+    <a href="#"><</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">></a>
+</div>
