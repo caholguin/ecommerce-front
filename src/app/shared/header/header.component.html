@@ -151,9 +151,9 @@
                 <a href="#">{{family.name}}</a>
               </li>
 
-              @for (item of family.categories; track $index) {
+              @for (category of family.categories; track $index) {
               <li class="panel-list-item">
-                <a href="#">{{item.name}}</a>
+                <a href="#">{{category.name}}</a>
               </li>
               }
             </ul>
@@ -161,101 +161,21 @@
           </div>
         </li>
 
-        <li class="menu-category">
-          <a href="#" class="menu-title">Men's</a>
-
-          <ul class="dropdown-list">
-
-            <li class="dropdown-item">
-              <a href="#">Shirt</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Shorts & Jeans</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Safety Shoes</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Wallet</a>
-            </li>
-
-          </ul>
-        </li>
+        @for (category of categories(); track $index) {
 
         <li class="menu-category">
-          <a href="#" class="menu-title">Women's</a>
-
+          <a href="#" class="menu-title">{{category.name}}</a>
+          
           <ul class="dropdown-list">
 
-            <li class="dropdown-item">
-              <a href="#">Dress & Frock</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Earrings</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Necklace</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Makeup Kit</a>
-            </li>
-
+            @for (subcategory of category.subCategories; track $index) {
+              <li class="dropdown-item">
+                <a href="#">{{subcategory.name}}</a>
+              </li>
+            }
           </ul>
         </li>
-
-        <li class="menu-category">
-          <a href="#" class="menu-title">Jewelry</a>
-
-          <ul class="dropdown-list">
-
-            <li class="dropdown-item">
-              <a href="#">Earrings</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Couple Rings</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Necklace</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Bracelets</a>
-            </li>
-
-          </ul>
-        </li>
-
-        <li class="menu-category">
-          <a href="#" class="menu-title">Perfume</a>
-
-          <ul class="dropdown-list">
-
-            <li class="dropdown-item">
-              <a href="#">Clothes Perfume</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Deodorant</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Flower Fragrance</a>
-            </li>
-
-            <li class="dropdown-item">
-              <a href="#">Air Freshener</a>
-            </li>
-
-          </ul>
-        </li>
+        }
 
         <li class="menu-category">
           <a href="#" class="menu-title">Blog</a>

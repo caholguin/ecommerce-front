@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { LayoutService } from '../../../services/Layout.service';
 import { CommonModule } from '@angular/common';
 
@@ -16,8 +16,8 @@ export class HeaderComponent {
 
   @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
 
-  @ViewChild('topbarmenu') menu!: ElementRef;
+  @ViewChild('topbarmenu') menu!: ElementRef;  
 
-  constructor(public layoutService: LayoutService) { }
+  public layoutService = inject(LayoutService);
 
 }

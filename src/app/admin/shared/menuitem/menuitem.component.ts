@@ -20,6 +20,7 @@ import { MenuService } from '../../../services/Menu.service';
         <span class="layout-menuitem-text layout-menuitem-icon">{{item.label}}</span>
         <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
       </a>
+      
       <a *ngIf="(item.routerLink && !item.items) && item.visible !== false" (click)="itemClick($event)" [ngClass]="item.class" 
          [routerLink]="item.routerLink" routerLinkActive="active-route" [routerLinkActiveOptions]="item.routerLinkActiveOptions||{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' }" >
        
@@ -63,6 +64,7 @@ export class MenuitemComponent {
   menuResetSubscription: Subscription;
 
   key: string = "";
+  
 
   constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router, private menuService: MenuService) {
       this.menuSourceSubscription = this.menuService.menuSource$.subscribe(value => {

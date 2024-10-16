@@ -3,7 +3,9 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { FamilyService } from '../../services/family.service';
-import { Family } from '../../interfaces/Family.interface';
+import {  Family } from '../../interfaces/Family.interface';
+import { CategoryService } from '../../services/Category.service';
+import { Category } from '../../interfaces/Category.interface';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +20,10 @@ export class HeaderComponent implements OnInit{
 
   private familyService = inject(FamilyService);
 
+  private categoryService = inject(CategoryService);
+
   public families = signal<Family[]>([]);
+  public categories = signal<Category[]>([]);
   
   menu = false;
   sidebarVisible = false;
@@ -29,7 +34,8 @@ export class HeaderComponent implements OnInit{
       this.sidebarVisible = visible;
     });
 
-    this.loadData();
+    this.loadFamilies();
+    this.loadCategories();
   }
 
   toggleMenu() {
@@ -45,9 +51,16 @@ export class HeaderComponent implements OnInit{
   }
 
 
-  public loadData(){
+  public loadFamilies(){
     this.familyService.loadPage().subscribe(families => {
         this.families.set(families);
     })
   }
+
+  public loadCategories(){
+    this.categoryService.loadCategories().subscribe(categories => {
+      this.categories.set(categories);
+    })
+  }
+
 }
