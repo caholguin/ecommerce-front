@@ -1,21 +1,22 @@
- <!-- Sidebar -->
- 
- <app-sidebar/>
-<!-- End of Sidebar -->
+<div class="layout-wrapper" [ngClass]="containerClass">
+   <app-header/>
+    <div class="layout-sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="layout-main-container">
+        <div class="layout-main">
 
-<!-- Main Content -->
-<div class="content">
-    <!-- Navbar -->
 
-    <app-header/>
-   
-    <!-- End of Navbar -->
+            <div class="grid p-fluid">
+                <div class="col-12">                   
+                    <router-outlet></router-outlet> 
+                </div>
+            </div>
 
-    <main>
-        
-        <router-outlet />
-       
-        
-    </main>
-
+        </div>
+         <app-footer></app-footer>
+    </div>
+    <!-- <app-config></app-config> -->
+    <div class="layout-mask"></div>
 </div>
+

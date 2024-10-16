@@ -96,10 +96,10 @@
   .sidebar-submenu-title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    //align-items: center;
     color: var(--sonic-silver);
-    font-size: var(--fs-7);
-    padding: 2px 0;
+    //font-size: var(--fs-7);
+    //padding: 2px 0;
   }
   
   .sidebar-submenu-title:hover { color: var(--eerie-black); }

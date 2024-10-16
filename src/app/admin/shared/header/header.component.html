@@ -1,18 +1,24 @@
-<nav>
-    <i class='bx bx-menu'></i>    
-    <form action="#">
-        <div class="form-input">
-            <input type="search" placeholder="Search...">
-            <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
-        </div>
-    </form>
-    <input  type="checkbox" id="theme-toggle" hidden>
-    <label for="theme-toggle" class="theme-toggle"></label>
-    <a href="#" class="notif">
-        <i class='bx bx-bell'></i>
-        <span class="count">12</span>
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="">
+      <span>SAKAI</span>
     </a>
-    <a href="#" class="profile">
-        <img src="images/logo.png">
-    </a>
-</nav>
+
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <i class='bx bx-menu'></i>
+    </button> 
+
+    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <button class="p-link layout-topbar-button">
+            <i class='bx bx-calendar-alt' ></i>
+            <span>Calendar</span>
+        </button>
+        <button class="p-link layout-topbar-button">
+            <i class='bx bx-user' ></i>
+            <span>Profile</span>
+        </button>        
+    </div>
+</div>
