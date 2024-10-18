@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit{
 
 
   public loadFamilies(){
-    this.familyService.loadPage().subscribe(families => {
+    this.familyService.getAllFamilies().subscribe(families => {
         this.families.set(families);
     })
   }

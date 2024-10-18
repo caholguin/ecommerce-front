@@ -15,24 +15,25 @@
 
     <ul class="sidebar-menu-category-list">
 
+      @for (category of categories(); track category.id) {
       <li class="sidebar-menu-category">
 
-        <button class="sidebar-accordion-menu btn-sidebar" (click)="dataAcordion()">
+        <button class="sidebar-accordion-menu btn-sidebar" (click)="toggleAccordion(category.id)">
 
           <div class="menu-title-flex">
-            <img src="/img/icons/dress.svg" alt="clothes" width="20" height="20" class="menu-title-img">
-
-            <p class="menu-title">Clothes</p>
+            <img [src]="category.icon" alt="clothes" width="20" height="20" class="menu-title-img">
+            <p class="menu-title">{{category.name}}</p>
           </div>
+          <hr>
 
           <div>
-            @if(statusData){
-            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
+            @if(expandedCategoryId === category.id){
+            <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#000000">
               <path
                 d="M221-428q-22 0-37.5-15.5T168-481q0-22 15.5-37.5T221-534h518q22 0 37.5 15.5T792-481q0 22-15.5 37.5T739-428H221Z" />
             </svg>
             }@else {
-            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
+            <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#000000">
               <path
                 d="M427-428H221q-22 0-37.5-15.5T168-481q0-22 15.5-37.5T221-534h206v-206q0-22 15.5-37.5T480-793q22 0 37.5 15.5T533-740v206h206q22 0 37.5 15.5T792-481q0 22-15.5 37.5T739-428H533v206q0 22-15.5 37.5T480-169q-22 0-37.5-15.5T427-222v-206Z" />
             </svg>
@@ -41,8 +42,8 @@
 
         </button>
 
-        @if(statusData){
-        <ul class="sidebar-submenu-category-list.active">
+        @if(expandedCategoryId === category.id){
+        <ul class="sidebar-submenu-category-list" [ngClass]="{'active': true}">
           <li class="sidebar-submenu-category">
             <a href="#" class="sidebar-submenu-title">
               <p class="product-name">Shirt</p>
@@ -74,6 +75,9 @@
         </ul>
         }
       </li>
+      }
+
+
     </ul>
 
   </div>

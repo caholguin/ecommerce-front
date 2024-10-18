@@ -1,30 +1,40 @@
+export interface FamilyInfo {
+  totalPages: number;
+  totalElements: number;
+  size: number;
+  content: Family[];
+  number: number;
+  sort: Sort;
+  first: boolean;
+  last: boolean;
+  numberOfElements: number;
+  pageable: Pageable;
+  empty: boolean;
+}
+
 export interface Family {
-    id?:         number;
-    name?:       string;
-    categories?: Category[];   
+  id: number;
+  name: string;
+  categories: Category[];
 }
 
 export interface Category {
-    id?:   number;
-    name?: string;
-    icon?: string;
+  id: number;
+  name: string;
+  icon: string;
 }
 
-export interface ApiResponse {
-    totalPages: number;
-    totalElements: number;
-    size: number;
-    content: Family[];   // Solo mapeamos lo que nos interesa
-    number: number;
-    sort: Sort;
-    numberOfElements: number;
-    first: boolean;
-    last: boolean;
-    empty: boolean;
-  }
-  
-  export interface Sort {
-    empty: boolean;
-    sorted: boolean;
-    unsorted: boolean;
-  }
+export interface Pageable {
+  pageNumber: number;
+  pageSize: number;
+  sort: Sort;
+  offset: number;
+  paged: boolean;
+  unpaged: boolean;
+}
+
+export interface Sort {
+  empty: boolean;
+  sorted: boolean;
+  unsorted: boolean;
+}

@@ -20,7 +20,7 @@ export class CategoryService {
       );
   }
 
-  public loadAllCategories(): Observable<Category[]> {
+  public getAllCategories(): Observable<Category[]> {
     return this.http.get<ApiResponse>(`${this.baseUrl}/categories`)  
       .pipe(
         map(resp => resp.content)  

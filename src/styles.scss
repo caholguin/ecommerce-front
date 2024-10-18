@@ -1,7 +1,7 @@
-@import "../public/layout/layout.scss"; 
+/* @import "../public/layout/layout.scss"; 
 
 @import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
+@import "primeng/resources/primeng.css"; */
 
 
 :root {
@@ -10,17 +10,17 @@
    * colors
    */
 
-  --spanish-gray: hsl(0, 0%, 60%);
-  --sonic-silver: hsl(0, 0%, 47%);
-  --eerie-black: hsl(0, 0%, 13%);
-  --salmon-pink: hsl(353, 100%, 78%);
-  --sandy-brown: hsl(29, 90%, 65%);
-  --bittersweet: hsl(0, 100%, 70%);
-  --ocean-green: hsl(152, 51%, 52%);
-  --davys-gray: hsl(0, 0%, 33%);
-  --cultured: hsl(0, 0%, 93%);
-  --white: hsl(0, 100%, 100%);
-  --onyx: hsl(0, 0%, 27%);
+  --spanish-gray: #999999;
+  --sonic-silver: #787878;
+  --eerie-black: #212121;
+  --salmon-pink: #009393;
+  --sandy-brown: #f6a355;
+  --bittersweet: #ff6666;
+  --ocean-green: #46c389;
+  --davys-gray: #545454;
+  --cultured: #ededed;
+  --white: #ffffff;
+  --onyx: #454545;
 
   /**
    * typography
@@ -78,12 +78,6 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
-/* button{
-  background: none;
-  font: inherit;
-  border: none;
-  cursor: pointer;
-} */
 
 img, ion-icon, .btn-sidebar, a { display: block; }
 
@@ -132,9 +126,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
-
-
-
 
 .p-button-label{
   font-weight: 500;
