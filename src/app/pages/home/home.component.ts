@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryComponent } from '../../components/category/category.component';
+import { SubCategoryComponent } from '../../components/category/subcategory.component';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import { NewArrivalComponent } from '../../components/newarrival/new-arrival.component';
 import { TrendingComponent } from '../../components/trending/trending.component';
@@ -15,7 +15,7 @@ import { HeaderComponent } from '../../shared/header/header.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FooterComponent,HeaderComponent,CategoryComponent,SidebarComponent,NewArrivalComponent,TrendingComponent,TopRatedComponent,DealOfTheDayComponent,NewProductComponent,TestimonialComponent,BlogComponent,BannerComponent],
+  imports: [FooterComponent,HeaderComponent,SubCategoryComponent,SidebarComponent,NewArrivalComponent,TrendingComponent,TopRatedComponent,DealOfTheDayComponent,NewProductComponent,TestimonialComponent,BlogComponent,BannerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

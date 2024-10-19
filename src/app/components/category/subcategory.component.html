@@ -1,0 +1,29 @@
+<div class="category">
+
+  <div class="container">
+
+    <div class="category-item-container has-scrollbar">
+
+      @for (subcategory of subCategories(); track $index) {
+      <div class="category-item">
+        <div class="category-img-box">
+          <img [src]="subcategory.icon" alt="dress & frock" width="30">
+        </div>
+
+        <div class="category-content-box">
+
+          <div class="category-content-flex">
+            <h3 class="category-item-title">{{subcategory.name}} - {{subcategory.category.name}}</h3>
+          </div>
+
+          <a href="#" class="category-btn">Show all</a>
+
+        </div>
+      </div>
+      }
+
+    </div>
+
+  </div>
+
+</div>

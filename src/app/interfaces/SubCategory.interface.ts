@@ -1,8 +1,8 @@
-export interface CategoryInfo {
+export interface SubCategoryInfo {
     totalElements:    number;
     totalPages:       number;
     size:             number;
-    content:          Category[];
+    content:          SubCategory[];
     number:           number;
     sort:             Sort;
     numberOfElements: number;
@@ -12,22 +12,18 @@ export interface CategoryInfo {
     empty:            boolean;
 }
 
-export interface Category {
-    id:            number;
-    name:          string;
-    icon:          string;
-    family:        Family;
-    subCategories: SubCategory[];
-}
-
-export interface Family {
-    id:   number;
-    name: string;
-}
-
 export interface SubCategory {
+    id:       number;
+    name:     string;
+    icon:     null;
+    category: Category;
+    products: null;
+}
+
+export interface Category {
     id:   number;
     name: string;
+    icon: string;
 }
 
 export interface Pageable {
