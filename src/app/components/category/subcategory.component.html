@@ -4,7 +4,7 @@
 
     <div class="category-item-container has-scrollbar">
 
-      @for (subcategory of subCategories(); track $index) {
+      @for (subcategory of subCategoryStore.subCategories(); track subcategory.id) {
       <div class="category-item">
         <div class="category-img-box">
           <img [src]="subcategory.icon" alt="dress & frock" width="30">
@@ -16,7 +16,7 @@
             <h3 class="category-item-title">{{subcategory.name}} - {{subcategory.category.name}}</h3>
           </div>
 
-          <a href="#" class="category-btn">Show all</a>
+          <a href="#" class="category-btn">Mostrar todo</a>
 
         </div>
       </div>

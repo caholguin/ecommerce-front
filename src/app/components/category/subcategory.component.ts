@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { SubCategoryService } from '../../services/subcategory.service';
-import { SubCategory } from '../../interfaces/SubCategory.interface';
+import { Component, inject } from '@angular/core';
+import { SubCategoryStore } from '../../store/subCategory.store';
 
 @Component({
   selector: 'app-subcategory',
@@ -11,20 +9,8 @@ import { SubCategory } from '../../interfaces/SubCategory.interface';
   templateUrl: './subcategory.component.html',
   styleUrl: './subcategory.component.scss'
 })
-export class SubCategoryComponent implements OnInit{
+export class SubCategoryComponent {
 
-  public subCategories = signal<SubCategory[]>([]);
-
-  private subCategoryService = inject(SubCategoryService);
-
-  ngOnInit(): void {
-    this.getAllSubCategories()
-  }
-
-  public getAllSubCategories(){
-    this.subCategoryService.getAllSubCategories().subscribe(subCategories => {
-      this.subCategories.set(subCategories);
-    })
-  }
+  readonly subCategoryStore = inject(SubCategoryStore);   
 
 }

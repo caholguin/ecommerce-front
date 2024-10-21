@@ -1,3 +1,5 @@
+import { Category } from "./Category.interface";
+
 export interface SubCategoryInfo {
     totalElements:    number;
     totalPages:       number;
@@ -18,12 +20,6 @@ export interface SubCategory {
     icon:     null;
     category: Category;
     products: null;
-}
-
-export interface Category {
-    id:   number;
-    name: string;
-    icon: string;
 }
 
 export interface Pageable {

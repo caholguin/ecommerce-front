@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { DashboardComponent } from './admin/pages/dashboard.component';
+import { DashboardComponent } from './admin/dashboard.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -8,6 +8,6 @@ export const routes: Routes = [
 
     { 
         path: 'admin', 
-        loadChildren: () => import('./admin/pages/pages.routes').then(m => m.routes),
+        loadChildren: () => import('./admin/dashboard.routes').then(m => m.dashboard),
     },
 ];

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomTableComponent } from './custom-table.component';
+import { FamiliesComponent } from './families.component';
 
-describe('CustomTableComponent', () => {
-  let component: CustomTableComponent;
-  let fixture: ComponentFixture<CustomTableComponent>;
+describe('FamiliesComponent', () => {
+  let component: FamiliesComponent;
+  let fixture: ComponentFixture<FamiliesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CustomTableComponent]
+      imports: [FamiliesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CustomTableComponent);
+    fixture = TestBed.createComponent(FamiliesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

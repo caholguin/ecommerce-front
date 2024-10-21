@@ -1,3 +1,5 @@
+import { SubCategory } from "./SubCategory.interface";
+
 export interface CategoryInfo {
     totalElements:    number;
     totalPages:       number;
@@ -21,11 +23,6 @@ export interface Category {
 }
 
 export interface Family {
-    id:   number;
-    name: string;
-}
-
-export interface SubCategory {
     id:   number;
     name: string;
 }
