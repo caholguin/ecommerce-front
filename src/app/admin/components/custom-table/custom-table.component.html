@@ -1,0 +1,29 @@
+<p-table [value]="data()" [tableStyle]="{'min-width': '50rem'}" [paginator]="true" [rows]="10"
+    [tableStyle]="{ 'min-width': '50rem' }" [rowsPerPageOptions]="[10, 20, 30]" styleClass="p-datatable-gridlines">
+
+    <ng-template pTemplate="header">
+        <tr>
+            @for (column of columns(); track $index) {
+            <th>{{column.header}}</th>
+            }
+            <th></th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData>
+        <tr>
+            @for (col of columns(); track $index) {
+            <td>{{ rowData[col.field] }}</td>
+            }
+            <td>
+                <div class="flex justify-content-end flex-wrap">
+                    <button pButton class="mr-2" [rounded]="true" [outlined]="true" class="mr-2 btn-table" (click)="onEdit(rowData)"><span class="material-symbols-outlined icon-table">edit</span></button>
+
+                    <button pButton severity="danger" [rounded]="true" [outlined]="true" class="btn-table" (click)="onDelete(rowData)"><span class="material-symbols-outlined">delete</span></button>
+                </div>
+            </td>
+
+
+        </tr>
+    </ng-template>
+</p-table>

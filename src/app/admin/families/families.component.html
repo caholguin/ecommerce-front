@@ -1,1 +1,21 @@
-<p>families works!</p>
+<div class="card">
+
+    <div class="flex justify-content-between flex-wrap">
+        <div class="flex align-items-center justify-content-center w-5rem h-4rem font-bold border-round m-2">
+            <h4>Familias</h4>
+        </div>
+        <div class="flex align-items-center justify-content-center w-5rem h-3rem font-bold border-round m-1">
+            <!-- <p-button label="Crear" [rounded]="true" [outlined]="true" severity="success" [routerLink]="['add']" /> -->
+            <button pButton [rounded]="true" class="btn-submit">Crear</button>
+        </div>
+    </div>
+
+    <app-custom-table [columns]="columns" [data]="familiyStore.families()" (edit)="onEdit($event)" (delete)="onDelete($event)"></app-custom-table>
+
+</div>
+
+
+
+
+
+    

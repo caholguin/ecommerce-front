@@ -16,20 +16,5 @@ export class FamilyService {
   public getAllFamilies(): Observable<Family[]> {
     return this.http.get<FamilyInfo>(`${this.baseUrl}/families?size=4`).pipe(map(info => FamilyAdapter(info)));
   }
-
-  public addFamily(family: Omit<Family, "id">): Observable<void> {   
-    return this.http.post<void>(`${this.baseUrl}/families`, {family}) ;    
-  }
-
-  public updateFamily(id:number,family:Family): Observable<void> {   
-    const url = `${this.baseUrl}/families/${id}`;
-    return this.http.put<void>(url,{family});    
-  }
-
-  public removeFamily(id:number): Observable<void> {  
-    const url = `${this.baseUrl}/families/${id}`;
-    return this.http.delete<void>(url) ;    
-  }
-
   
 }

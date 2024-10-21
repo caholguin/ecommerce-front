@@ -1,9 +1,3 @@
-/* @import "../public/layout/layout.scss"; 
-
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css"; */
-
-
 :root {
 
   /**
@@ -69,7 +63,7 @@
 
  *, *::before, *::after {
   margin: 0;
-  padding: 0;
+  //padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -126,35 +120,4 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
-
-.p-button-label{
-  font-weight: 500;
-  padding: 10px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
