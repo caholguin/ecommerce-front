@@ -1,11 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { FamilyService } from '../../services/family.service';
-import {  Family } from '../../interfaces/Family.interface';
-import { CategoryService } from '../../services/Category.service';
-import { Category } from '../../interfaces/Category.interface';
+import { FamilyStore } from '../../store/Family.store';
+import { CategoryStore } from '../../store/category.store';
 
 @Component({
   selector: 'app-header',
@@ -14,28 +12,21 @@ import { Category } from '../../interfaces/Category.interface';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit{
-  
+export class HeaderComponent implements OnInit {
+
   private sidebarService = inject(SidebarService);
 
-  private familyService = inject(FamilyService);
+  readonly familiyStore = inject(FamilyStore);
+  readonly categoryStore = inject(CategoryStore);
 
-  private categoryService = inject(CategoryService);
-
-  public families = signal<Family[]>([]);
-  public categories = signal<Category[]>([]);
-  
   menu = false;
   sidebarVisible = false;
   statusData = false;
-  
+
   ngOnInit(): void {
     this.sidebarService.sidebarVisible.subscribe(visible => {
       this.sidebarVisible = visible;
     });
-
-    this.loadFamilies();
-    this.loadCategories();
   }
 
   toggleMenu() {
@@ -43,24 +34,11 @@ export class HeaderComponent implements OnInit{
   }
 
   toggleSidebar() {
-    this.sidebarService.toggleSidebar();  
+    this.sidebarService.toggleSidebar();
   }
 
-  dataAcordion(){    
+  dataAcordion() {
     this.statusData = !this.statusData;
-  }
-
-
-  public loadFamilies(){
-    this.familyService.getAllFamilies().subscribe(families => {
-        this.families.set(families);
-    })
-  }
-
-  public loadCategories(){
-    this.categoryService.loadCategories().subscribe(categories => {
-      this.categories.set(categories);
-    })
   }
 
 }

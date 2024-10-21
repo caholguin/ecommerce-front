@@ -4,6 +4,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { CategoryService } from '../../services/Category.service';
 import { Category } from '../../interfaces/Category.interface';
+import { CategoryStore } from '../../store/category.store';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,31 +15,25 @@ import { Category } from '../../interfaces/Category.interface';
 })
 export class SidebarComponent implements OnInit {
 
-  private sidebarService = inject(SidebarService);
-  private categoryService = inject(CategoryService);
+  private sidebarService = inject(SidebarService);  
+
+  readonly categoryStore = inject(CategoryStore);
 
   sidebarVisible = false;
   statusData = false;
 
   expandedCategoryId: number | null = null; // Mantiene el estado del ítem expandido
-  public categories = signal<Category[]>([]);
+ 
 
   ngOnInit(): void {
     this.sidebarService.sidebarVisible.subscribe(visible => {
       this.sidebarVisible = visible;
     });
-
-    this.getCategories();
+   
   }
 
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
-  }
-
-  getCategories() {
-    this.categoryService.getAllCategories().subscribe(categories => {
-      this.categories.set(categories);
-    })
   }
 
   // Controla la expansión del ítem individual

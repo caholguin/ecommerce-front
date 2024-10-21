@@ -49,8 +49,8 @@
 
       <div class="header-alert-news">
         <p>
-          <b>Free Shipping</b>
-          This Week Order Over - $55
+          <b>Envío Gratis</b>
+          Pedido de esta semana más de - $55
         </p>
       </div>
 
@@ -87,7 +87,7 @@
 
       <div class="header-search-container">
 
-        <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+        <input type="search" name="search" class="search-field" placeholder="Introduzca el nombre de su producto...">
 
         <button class="search-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -137,21 +137,17 @@
         <li class="menu-category">
           <a href="#" class="menu-title">Home</a>
         </li>
-
-
         <li class="menu-category">
-          <a href="#" class="menu-title">Categories</a>
-
+          <a href="#" class="menu-title">Categorias</a>
           <div class="dropdown-panel">
-            @for (family of families(); track $index) {
-
+            @for (family of familiyStore.families(); track family.id) {
             <ul class="dropdown-panel-list">
 
               <li class="menu-title">
                 <a href="#">{{family.name}}</a>
               </li>
 
-              @for (category of family.categories; track $index) {
+              @for (category of family.categories; track category.id) {
               <li class="panel-list-item">
                 <a href="#">{{category.name}}</a>
               </li>
@@ -161,17 +157,16 @@
           </div>
         </li>
 
-        @for (category of categories(); track $index) {
+        @for (category of categoryStore.categories(); track category.id) {
 
         <li class="menu-category">
           <a href="#" class="menu-title">{{category.name}}</a>
-          
-          <ul class="dropdown-list">
 
-            @for (subcategory of category.subCategories; track $index) {
-              <li class="dropdown-item">
-                <a href="#">{{subcategory.name}}</a>
-              </li>
+          <ul class="dropdown-list">
+            @for (subcategory of category.subCategories; track subcategory.id) {
+            <li class="dropdown-item">
+              <a href="#">{{subcategory.name}}</a>
+            </li>
             }
           </ul>
         </li>
@@ -182,7 +177,7 @@
         </li>
 
         <li class="menu-category">
-          <a href="#" class="menu-title">Hot Offers</a>
+          <a href="#" class="menu-title">Ofertas</a>
         </li>
 
       </ul>

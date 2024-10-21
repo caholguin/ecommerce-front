@@ -3,7 +3,7 @@
   <div class="sidebar-category">
 
     <div class="sidebar-top">
-      <h2 class="sidebar-title">Category</h2>
+      <h2 class="sidebar-title">Categoria</h2>
 
       <button (click)="toggleSidebar()" class="sidebar-close-btn btn-sidebar" data-mobile-menu-close-btn>
         <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
@@ -15,7 +15,7 @@
 
     <ul class="sidebar-menu-category-list">
 
-      @for (category of categories(); track category.id) {
+      @for (category of categoryStore.categories(); track category.id) {
       <li class="sidebar-menu-category">
 
         <button class="sidebar-accordion-menu btn-sidebar" (click)="toggleAccordion(category.id)">
@@ -84,7 +84,7 @@
 
   <div class="product-showcase">
 
-    <h3 class="showcase-heading">best sellers</h3>
+    <h3 class="showcase-heading">Los más vendidos</h3>
 
     <div class="showcase-wrapper">
 

@@ -1,3 +1,5 @@
+import { Category } from "./Category.interface";
+
 export interface FamilyInfo {
   totalPages: number;
   totalElements: number;
@@ -16,12 +18,6 @@ export interface Family {
   id: number;
   name: string;
   categories: Category[];
-}
-
-export interface Category {
-  id: number;
-  name: string;
-  icon: string;
 }
 
 export interface Pageable {

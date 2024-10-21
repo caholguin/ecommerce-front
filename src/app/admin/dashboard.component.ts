@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation  } from '@angular/core';
-import { SidebarComponent } from '../shared/sidebar/sidebar.component';
-import { HeaderComponent } from '../shared/header/header.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { HeaderComponent } from './shared/header/header.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { Subscription } from 'rxjs';
-import { LayoutService } from '../../services/Layout.service';
-import { FooterComponent } from '../shared/footer/footer.component';
+import { LayoutService } from '../services/Layout.service';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @Component({

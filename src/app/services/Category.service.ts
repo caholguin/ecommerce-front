@@ -3,7 +3,8 @@ import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 
-import { ApiResponse, Category } from '../interfaces/Category.interface';
+import { Category, CategoryInfo } from '../interfaces/Category.interface';
+import { CategoryAdapter } from '../adapters/category.adapter';
 
 @Injectable({
   providedIn: 'root'
@@ -14,17 +15,11 @@ export class CategoryService {
   private http = inject(HttpClient);
 
   public loadCategories(): Observable<Category[]> {
-    return this.http.get<ApiResponse>(`${this.baseUrl}/categories?size=3`)  
-      .pipe(
-        map(resp => resp.content)  
-      );
+    return this.http.get<CategoryInfo>(`${this.baseUrl}/categories?size=3`).pipe(map(resp => CategoryAdapter(resp)));
   }
 
   public getAllCategories(): Observable<Category[]> {
-    return this.http.get<ApiResponse>(`${this.baseUrl}/categories`)  
-      .pipe(
-        map(resp => resp.content)  
-      );
+    return this.http.get<CategoryInfo>(`${this.baseUrl}/categories`).pipe(map(resp => CategoryAdapter(resp)));
   }
 
 }
