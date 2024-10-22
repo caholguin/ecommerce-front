@@ -28,7 +28,7 @@ export const FamilyStore = signalStore(
   withHooks({
     async onInit(store, familyService = inject(FamilyService)) {
       const families = await lastValueFrom(
-        familyService.getAllFamilies(),
+        familyService.getFamilies(),
       );
 
       patchState(store, { families });

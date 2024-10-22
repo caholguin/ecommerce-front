@@ -1,0 +1,6 @@
+<label for=""  >{{ label() }}</label>
+<input  [formControl]="control()"  [type]="type()" [attr.placeholder]="placeHolder()"  class=" text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+
+@if (control().invalid && control().touched) {
+    <small class="error">{{ errorMessage() }}</small>
+}

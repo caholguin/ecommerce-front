@@ -14,13 +14,15 @@ export class FamilyService {
   private readonly baseUrl:String = environment.baseUrl;
   private http = inject(HttpClient);
 
+
   public getAllFamilies(): Observable<Family[]> {
-    return this.http.get<FamilyInfo>(`${this.baseUrl}/families?size=4`).pipe(map(info => FamilyAdapter(info)));
+    return this.http.get<FamilyInfo>(`${this.baseUrl}/families`).pipe(map(info => FamilyAdapter(info)));
   }
 
-  public addFamily(family: Omit<Family, "id">): Observable<void> {   
-    return this.http.post<void>(`${this.baseUrl}/families`, {family}) ;    
+  public addFamily(family: Omit<Family, 'id'>): Observable<Family> {
+    return this.http.post<Family>(`${this.baseUrl}/families`, family);
   }
+  
 
   public updateFamily(id:number,family:Family): Observable<void> {   
     const url = `${this.baseUrl}/families/${id}`;

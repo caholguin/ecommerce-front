@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { FamilyStore } from './store/family.store';
 import { FamilyService } from './services/Family.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-families',
@@ -18,21 +18,17 @@ import { RouterModule } from '@angular/router';
 export class FamiliesComponent implements OnInit{
   
   readonly familiyStore = inject(FamilyStore);
-  private familyService = inject(FamilyService);
+  
+  router = inject(Router);
 
   families:Family[] = [];
   
   ngOnInit(): void {
-   
+  
   }
   
   columns: ColumnDefinition<Family>[] = [    
     { field: 'name', header: 'Nombre' },    
-  ];
-
-  data: Family[] = [
-    { id:1, name: 'Producto 1'  },
-    { id:2, name: 'Producto 2' },    
   ];
 
   onEdit(product: any) {
@@ -40,9 +36,13 @@ export class FamiliesComponent implements OnInit{
     // Aquí iría la lógica para editar el producto
   }
 
-  onDelete(product: any) {
-    console.log('Deleting product:', product);
-    // Aquí iría la lógica para eliminar el producto
-  }
-  
+  onDelete(data: Family) {    
+    this.familiyStore.removeFamily(data.id).then(() => {      
+      this.router.navigate(['/admin/familias']); 
+    })
+    .catch((error) => {      
+      console.error('Error al agregar la familia:', error);      
+    });
+  }  
+
 }

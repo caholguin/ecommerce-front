@@ -13,7 +13,7 @@ export class FamilyService {
   private readonly baseUrl:String = environment.baseUrl;
   private http = inject(HttpClient);
 
-  public getAllFamilies(): Observable<Family[]> {
+  public getFamilies(): Observable<Family[]> {
     return this.http.get<FamilyInfo>(`${this.baseUrl}/families?size=4`).pipe(map(info => FamilyAdapter(info)));
   }
   

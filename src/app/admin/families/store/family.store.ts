@@ -5,6 +5,7 @@ import { withEntities } from '@ngrx/signals/entities';
 import { lastValueFrom } from 'rxjs';
 import { Family } from '../../../interfaces/Category.interface';
 import { FamilyService } from '../services/Family.service';
+import { family } from '../family.routes';
 
 
 type StoreState = {
@@ -24,6 +25,46 @@ export const FamilyStore = signalStore(
   withState(() => inject(STORE_STATE)),
   withEntities<Family>(),
   withMethods((store, familyService = inject(FamilyService)) => ({
+
+    getFamily(id: number) {
+      return store.families().find((fam) => fam.id === id);
+    },
+
+    async addFamily(family: Omit<Family, 'id'>) {      
+      try {
+        const newFamily = await lastValueFrom(familyService.addFamily(family));
+
+        patchState(store, ({ families }) => ({
+          families: [
+            ...families,
+            { id: newFamily.id, ...family },
+          ],
+        }));
+      } catch (error) {}
+    },
+
+    async removeFamily(id: number) {
+      try {
+        await lastValueFrom(familyService.removeFamily(id));
+
+        patchState(store, ({ families }) => ({
+          families: families.filter((fam) => fam.id !== id),
+        }));
+      } catch (error) {}
+    },
+
+    async updateFamily(id:number, family: Family) {
+      try {
+        await lastValueFrom(familyService.updateFamily(id,family));
+
+        patchState(store, ({ families }) => ({
+          families: families.map((fam) =>
+            fam.id === family.id ? { ...fam, ...family } : fam,
+          ),
+          isLoading: false,
+        }));
+      } catch (error) {}
+    },   
 
   })),
   withHooks({
