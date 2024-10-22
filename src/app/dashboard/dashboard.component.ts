@@ -35,22 +35,6 @@ export class DashboardComponent {
       'p-input-filled': this.layoutService.config().inputStyle === 'filled',
       'p-ripple-disabled': !this.layoutService.config().ripple
     }
-  }
-
-
-
-
-
-
-/*   sidebar = false;
-
-  prueba(){
-    console.log('llego');
-    this.sidebar = !this.sidebar;
-    console.log(this.sidebar);
-  } */
-
-
-  
+  } 
   
 }

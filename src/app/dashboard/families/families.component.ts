@@ -32,12 +32,12 @@ export class FamiliesComponent implements OnInit{
   ];
 
   onEdit(data: Family) {       
-    this.router.navigate(['/admin/familias/',data.id]); 
+    this.router.navigate(['/dashboard/familias/',data.id]); 
   }
 
   onDelete(data: Family) {    
     this.familiyStore.removeFamily(data.id).then(() => {      
-      this.router.navigate(['/admin/familias']); 
+      this.router.navigate(['/dashboard/familias']); 
     })
     .catch((error) => {      
       console.error('Error al agregar la familia:', error);      

@@ -51,7 +51,7 @@ export class AddFamilyComponent {
       const methodToUse = this.id() ? 'updateFamily' : 'addFamily';
 
       this.store[methodToUse](family).then(() => {       
-        this.router.navigate(['/admin/familias']);
+        this.router.navigate(['/dashboard/familias']);
       }).catch((error) => {        
         console.error('Error al procesar la familia:', error);
       });   
@@ -61,7 +61,7 @@ export class AddFamilyComponent {
 
     /* const familyData = this.familyForm().value;   
     this.store.addFamily(familyData).then(() => {      
-      this.router.navigate(['/admin/familias']); 
+      this.router.navigate(['/dashboard/familias']); 
     })
     .catch((error) => {      
       console.error('Error al agregar la familia:', error);      
