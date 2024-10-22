@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddFamilyComponent } from './add-family.component';
+import { AddFamilyComponent } from './add-edit-family.component';
 
 describe('AddFamilyComponent', () => {
   let component: AddFamilyComponent;

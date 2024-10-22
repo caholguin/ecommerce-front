@@ -17,7 +17,7 @@ export interface SubCategoryInfo {
 export interface SubCategory {
     id:       number;
     name:     string;
-    icon:     null;
+    icon:     string;
     category: Category;
     products: null;
 }

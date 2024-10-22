@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { AddFamilyComponent } from './components/add-family/add-family.component';
+import { AddFamilyComponent } from './components/add-edit-family/add-edit-family.component';
 
 
 export const family: Routes = [
@@ -14,10 +14,10 @@ export const family: Routes = [
       },
       {
         path: 'add',
-        loadComponent: () => import('../families/components/add-family/add-family.component').then((m) => m.AddFamilyComponent),
+        loadComponent: () => import('./components/add-edit-family/add-edit-family.component').then((m) => m.AddFamilyComponent),
       },
       {
         path: ':id',
-        loadComponent: () => import('../families/families.component').then((m) => m.FamiliesComponent),
+        loadComponent: () => import('./components/add-edit-family/add-edit-family.component').then((m) => m.AddFamilyComponent),
       },
 ];

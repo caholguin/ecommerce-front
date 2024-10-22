@@ -34,3 +34,10 @@ export interface Sort {
   sorted: boolean;
   unsorted: boolean;
 }
+
+
+export const emptyFamily: Family  = {
+  id: 0,
+  name: '',
+  categories: []
+};

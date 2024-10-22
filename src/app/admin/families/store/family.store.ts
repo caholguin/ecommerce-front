@@ -53,9 +53,9 @@ export const FamilyStore = signalStore(
       } catch (error) {}
     },
 
-    async updateFamily(id:number, family: Family) {
+    async updateFamily(family: Family) {
       try {
-        await lastValueFrom(familyService.updateFamily(id,family));
+        await lastValueFrom(familyService.updateFamily(family.id,family));
 
         patchState(store, ({ families }) => ({
           families: families.map((fam) =>

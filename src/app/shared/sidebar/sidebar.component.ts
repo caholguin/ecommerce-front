@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 
 import { SidebarService } from '../../services/sidebar.service';
@@ -9,7 +9,7 @@ import { CategoryStore } from '../../store/category.store';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgOptimizedImage],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

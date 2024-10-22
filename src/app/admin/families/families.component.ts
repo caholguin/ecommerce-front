@@ -31,9 +31,8 @@ export class FamiliesComponent implements OnInit{
     { field: 'name', header: 'Nombre' },    
   ];
 
-  onEdit(product: any) {
-    console.log('Editing product:', product);
-    // Aquí iría la lógica para editar el producto
+  onEdit(data: Family) {       
+    this.router.navigate(['/admin/familias/',data.id]); 
   }
 
   onDelete(data: Family) {    

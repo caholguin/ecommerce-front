@@ -24,9 +24,9 @@ export class FamilyService {
   }
   
 
-  public updateFamily(id:number,family:Family): Observable<void> {   
+  public updateFamily(id:number,family:Family): Observable<Family> {   
     const url = `${this.baseUrl}/families/${id}`;
-    return this.http.put<void>(url,{family});    
+    return this.http.put<Family>(url,family);    
   }
 
   public removeFamily(id:number): Observable<void> {  
