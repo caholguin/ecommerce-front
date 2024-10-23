@@ -35,7 +35,6 @@ export interface Sort {
   unsorted: boolean;
 }
 
-
 export const emptyFamily: Family  = {
   id: 0,
   name: '',

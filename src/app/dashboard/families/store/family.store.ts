@@ -3,9 +3,8 @@ import { inject, InjectionToken } from '@angular/core';
 import { patchState, signalStore, withHooks, withMethods, withState } from '@ngrx/signals';
 import { withEntities } from '@ngrx/signals/entities';
 import { lastValueFrom } from 'rxjs';
-import { Family } from '../../../interfaces/Category.interface';
 import { FamilyService } from '../services/Family.service';
-import { family } from '../family.routes';
+import { Family } from '../../../interfaces/Family.interface';
 
 
 type StoreState = {
@@ -64,15 +63,21 @@ export const FamilyStore = signalStore(
           isLoading: false,
         }));
       } catch (error) {}
-    },   
+    },      
+
+    selectFamilies() {
+      return store.families().map(family => ({
+        value: family.id,
+        label: family.name
+      }));
+    },
 
   })),
   withHooks({
     async onInit(store, familyService = inject(FamilyService)) {
       const families = await lastValueFrom(
         familyService.getAllFamilies(),
-      );
-
+      );      
       patchState(store, { families });
     },
   }),

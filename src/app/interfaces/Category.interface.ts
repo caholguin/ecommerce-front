@@ -1,3 +1,5 @@
+
+import { Family } from "./Family.interface";
 import { SubCategory } from "./SubCategory.interface";
 
 export interface CategoryInfo {
@@ -20,11 +22,7 @@ export interface Category {
     icon:          string;
     family:        Family;
     subCategories: SubCategory[];
-}
-
-export interface Family {
-    id:   number;
-    name: string;
+    familyId?:     number;
 }
 
 export interface Pageable {
@@ -41,3 +39,12 @@ export interface Sort {
     sorted:   boolean;
     unsorted: boolean;
 }
+
+export const emptyCategory: Omit<Category, 'subCategories'|'family'>  = {
+    id: 0,
+    name: '',
+    icon: '',
+    familyId: undefined    
+  };
+
+  //<Family, 'id'>

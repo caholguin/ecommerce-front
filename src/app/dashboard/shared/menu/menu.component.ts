@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MenuitemComponent } from '../menuitem/menuitem.component';
 
 @Component({
@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
         items: [
           { label: 'Dashboard', icon: 'dashboard', routerLink: ['/dashboard']},
           { label: 'Familias', icon: 'inventory_2', routerLink: ['/dashboard/familias'] },
-          { label: 'Categorias', icon: 'category', },
+          { label: 'Categorias', icon: 'category', routerLink: ['/dashboard/categorias']},
           { label: 'SubCategorias', icon: 'label_important', },
           { label: 'Opciones', icon: 'settings', },
           { label: 'Productos', icon: 'inventory', },

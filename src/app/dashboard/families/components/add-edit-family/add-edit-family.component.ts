@@ -8,37 +8,41 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { emptyFamily } from '../../../../interfaces/Family.interface';
 
 interface FamilyForm {
-  name: FormControl<string>;  
+  name: FormControl<string>;
 }
 
 
 @Component({
   selector: 'app-add-edit-family',
   standalone: true,
-  imports: [InputTextModule, ButtonModule,CustomInputComponent,ReactiveFormsModule,RouterModule],
+  imports: [InputTextModule, ButtonModule, CustomInputComponent, ReactiveFormsModule, RouterModule],
   templateUrl: './add-family.component.html',
   styleUrl: './add-family.component.scss'
 })
 export class AddFamilyComponent {
+
+  id = input<number>();
+
+  isEditMode = computed(() => !!this.id());
+  title = computed(() => this.isEditMode() ? 'Editar familia' : 'Crear familia');
   
-  id = input<number>();  
-  
-  readonly store = inject(FamilyStore); 
-  
-  private router = inject(Router); 
-  
+  readonly store = inject(FamilyStore);
+
+  private router = inject(Router);
+
+
   characterToEdit = computed(
     () => this.store.getFamily(Number(this.id())) ?? emptyFamily,
-  ); 
-  
+  );
+
   familyForm: Signal<FormGroup> = computed(
     () =>
       new FormGroup<FamilyForm>({
         name: new FormControl(this.characterToEdit().name, {
           nonNullable: true,
           validators: [Validators.required],
-        })       
-      })      
+        })
+      })
   );
 
   onSubmit() {
@@ -50,11 +54,11 @@ export class AddFamilyComponent {
 
       const methodToUse = this.id() ? 'updateFamily' : 'addFamily';
 
-      this.store[methodToUse](family).then(() => {       
+      this.store[methodToUse](family).then(() => {
         this.router.navigate(['/dashboard/familias']);
-      }).catch((error) => {        
+      }).catch((error) => {
         console.error('Error al procesar la familia:', error);
-      });   
+      });
 
       this.familyForm().reset();
     }
@@ -66,5 +70,5 @@ export class AddFamilyComponent {
     .catch((error) => {      
       console.error('Error al agregar la familia:', error);      
     }); */
-  } 
+  }
 }

@@ -1,6 +1,4 @@
 import { Routes } from "@angular/router";
-import { AddFamilyComponent } from './components/add-edit-family/add-edit-family.component';
-
 
 export const family: Routes = [
     {
@@ -13,7 +11,7 @@ export const family: Routes = [
         loadComponent: () => import('../families/families.component').then((m) => m.FamiliesComponent),
       },
       {
-        path: 'add',
+        path: 'crear',
         loadComponent: () => import('./components/add-edit-family/add-edit-family.component').then((m) => m.AddFamilyComponent),
       },
       {

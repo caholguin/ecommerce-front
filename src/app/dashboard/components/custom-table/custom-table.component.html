@@ -13,7 +13,13 @@
     <ng-template pTemplate="body" let-rowData>
         <tr>
             @for (col of columns(); track $index) {
-            <td>{{ rowData[col.field] }}</td>
+
+                @if (isImage(resolveField(rowData, col.field))) {
+                    <td class="icon-column"><img class="table-icon"[src]="resolveField(rowData, col.field)" alt="Image" ></td>
+                } @else {
+                    <td>{{ resolveField(rowData, col.field) }}</td>
+                }
+
             }
             <td>
                 <div class="flex justify-content-end flex-wrap">

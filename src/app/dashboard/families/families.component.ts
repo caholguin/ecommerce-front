@@ -1,12 +1,12 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CustomTableComponent } from '../components/custom-table/custom-table.component';
-import { Family } from '../../interfaces/Category.interface';
 import { ColumnDefinition } from '../interfaces/columnDefinition.interface';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { FamilyStore } from './store/family.store';
 import { FamilyService } from './services/Family.service';
 import { Router, RouterModule } from '@angular/router';
+import { Family } from '../../interfaces/Family.interface';
 
 @Component({
   selector: 'app-families',
@@ -15,17 +15,11 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './families.component.html',
   styleUrl: './families.component.scss'
 })
-export class FamiliesComponent implements OnInit{
+export class FamiliesComponent {
   
   readonly familiyStore = inject(FamilyStore);
   
-  router = inject(Router);
-
-  families:Family[] = [];
-  
-  ngOnInit(): void {
-  
-  }
+  router = inject(Router); 
   
   columns: ColumnDefinition<Family>[] = [    
     { field: 'name', header: 'Nombre' },    
