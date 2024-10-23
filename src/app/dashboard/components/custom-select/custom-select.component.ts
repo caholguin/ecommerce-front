@@ -4,8 +4,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 
 interface SelectOption {
-  label: string;
-  value: any;
+  name: string;
+  id: any;
 }
 
 @Component({
@@ -21,7 +21,7 @@ export class CustomSelectComponent<T>{
 
    placeholder = signal('Select an option');
  
-   control: WritableSignal<FormControl> = signal(new FormControl(null));
+   control = input.required<FormControl>();
  
    selectedValue = signal<any>(null);
  

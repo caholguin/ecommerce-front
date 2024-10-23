@@ -1,9 +1,10 @@
+<label class="font-bold block mb-2 select">Family</label>
 <p-dropdown
   [formControl]="control()"
   [options]="options()"
-  [optionLabel]="'label'"
+  optionLabel="name"
+  optionValue="id"
   [filter]="true"
   [showClear]="true"
-  [filterBy]="'label'"
   [placeholder]="placeholder()">
 </p-dropdown>

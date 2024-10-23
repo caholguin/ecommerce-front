@@ -31,11 +31,12 @@ export class CategoriesComponent {
   }
 
   onDelete(data: Category) {    
-   /*  this.familiyStore.removeFamily(data.id).then(() => {      
-      this.router.navigate(['/dashboard/familias']); 
+    this.categoryStore.removeCategory(data.id).then(() => {   
+      this.router.navigate(['/dashboard/categorias']); 
+      alert('registro eliminado')   
     })
     .catch((error) => {      
-      console.error('Error al agregar la familia:', error);      
-    }); */
+      console.error('Error al eliminar la categoria:', error);      
+    });
   }  
 }

@@ -5,7 +5,6 @@ import { withEntities } from "@ngrx/signals/entities";
 import { CategoryService } from "../services/Category.service";
 import { lastValueFrom } from "rxjs";
 
-
 type StoreState = {
     categories: Category[];
 }
@@ -26,6 +25,7 @@ const STORE_STATE = new InjectionToken<StoreState>('CategoryStore', {
   
       getCategory(id: number) {
         return store.categories().find((cat) => cat.id === id);
+        
       },
   
       async addCategory(category: Omit<Category,"id">) {      
@@ -49,8 +49,8 @@ const STORE_STATE = new InjectionToken<StoreState>('CategoryStore', {
             categories: categories.filter((cat) => cat.id !== id),
           }));
         } catch (error) {}
-      },
-  
+      },    
+
       async updateCategory(category: Category) {
         try {
           const categoryUpdate = await lastValueFrom(categoryService.updateCategory(category.id,category));
@@ -62,7 +62,8 @@ const STORE_STATE = new InjectionToken<StoreState>('CategoryStore', {
             isLoading: false,
           }));
         } catch (error) {}
-      },   
+      },     
+      
   
     })),
     withHooks({

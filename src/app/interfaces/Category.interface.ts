@@ -40,11 +40,16 @@ export interface Sort {
     unsorted: boolean;
 }
 
-export const emptyCategory: Omit<Category, 'subCategories'|'family'>  = {
+export const emptyCategory: Omit<Category, 'subCategories'>  = {
     id: 0,
     name: '',
     icon: '',
-    familyId: undefined    
+    familyId: undefined,
+    family: {
+        id: 0,
+        name: '',
+        categories: []
+    }    
   };
 
   //<Family, 'id'>

@@ -25,3 +25,24 @@
     color: #ffffff;
     font-weight: bold;
 }
+
+
+/* Estilo común para input y select */
+.common-input {
+    padding: 0.5rem;                /* Espaciado interno */
+    border: 1px solid var(--surface-border); /* Borde */
+    border-radius: 7px;            /* Esquinas redondeadas */
+    width: 100%;                    /* Ancho completo */
+    outline: none;                  /* Sin borde en foco */
+    box-sizing: border-box;         /* Incluye padding y border en el ancho total */
+    height: 40px;
+}
+
+.common-input:focus {
+    border-color: var(--primary-color);   /* Color del borde al enfocar */
+}
+
+.common-select:focus {
+    border: none !important;   /* Color del borde al enfocar */
+}
+

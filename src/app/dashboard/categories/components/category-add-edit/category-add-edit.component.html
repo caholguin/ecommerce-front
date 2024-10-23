@@ -1,9 +1,9 @@
 <div class="card">   
-    <h4>{{title()}}</h4>
+    <h4>{{title()}}</h4>  
 
     <form [formGroup]="categoryForm()" (ngSubmit)="onSubmit()">
         <div class="formgrid grid">
-            <div class="field col">
+            <div class="field col-12 md:col-4">
                 <app-custom-input
                 label="Nombre"
                 [control]="$any(categoryForm().get('name'))"
@@ -12,30 +12,23 @@
                 errorMessage="El campo nombre es obligatorio"
                 ></app-custom-input>           
             </div>
-            <div class="field col">
+            <div class="field col-12 md:col-4">
                 <app-custom-input
                 label="Icono"
                 [control]="$any(categoryForm().get('icon'))"
                 placeHolder=""
                 type="text"
-                errorMessage="El campo nombre es obligatorio"
+                errorMessage="El campo icono es obligatorio"
                 ></app-custom-input>           
             </div>
-            <div class="field col">
-                <p-dropdown 
-                formControlName="selectedCity"
+            <div class="field col-12 md:col-4">           
+                <app-custom-select
                 [options]="familyStore.families()"
-                formControlName="familyId"                
-                optionLabel="name"
-                optionValue="id"
-                placeholder="Select a City" />
-
-               <!--  <app-custom-select   
-                [options]="familyStore.selectFamilies()"
                 [control]="$any(categoryForm().get('familyId'))"
-                >
-              </app-custom-select>    -->    
+                placeholder="Select a Family">
+              </app-custom-select>             
             </div>
+            
         </div>
 
         <div class="flex flex-row-reverse flex-wrap mt-2">
@@ -43,7 +36,7 @@
                 <button pButton [rounded]="true" class="btn-submit" type="submit" [disabled]="categoryForm().invalid">Guardar</button>
             </div>
             <div class="flex align-items-center justify-content-center  font-bold border-round">
-                <a pButton [rounded]="true" class="mr-3 btn-cancel" [routerLink]="['/dashboard/familias']">Cancelar</a>            
+                <a pButton [rounded]="true" class="mr-3 btn-cancel" [routerLink]="['/dashboard/categorias']">Cancelar</a>            
             </div>
             
         </div>
